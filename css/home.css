@@ -1,0 +1,70 @@
+/* Accueil : les decks présentés comme des intercalaires de boîte à fiches. */
+
+.today {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 4px 16px;
+}
+.today strong { font-family: var(--f-display); font-size: 1.15rem; }
+
+.decks { display: grid; gap: 22px; padding-top: 14px; }
+
+.deck {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding: 16px 16px 14px;
+  border-radius: 4px var(--radius) var(--radius) var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+/* l'onglet de l'intercalaire, de la couleur du deck */
+.deck::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -12px;
+  width: 92px;
+  height: 14px;
+  border-radius: 8px 8px 0 0;
+  background: var(--deck-color, var(--accent));
+}
+
+.deck-head { display: flex; gap: 12px; align-items: flex-start; }
+.deck-name { font-family: var(--f-display); font-weight: 700; font-size: 1.2rem; overflow-wrap: anywhere; }
+.deck-meta { color: var(--ink-soft); font-size: .9em; }
+
+.due-line { display: flex; flex-wrap: wrap; gap: 14px; font-size: .95em; }
+.due-line b { font-variant-numeric: tabular-nums; }
+.due-line .hot b { color: var(--accent); }
+
+/* les 5 boîtes de Leitner */
+.boxes { display: grid; gap: 6px; }
+.boxbar { display: flex; height: 10px; overflow: hidden; border-radius: 99px; background: var(--box0); }
+.boxbar span { display: block; height: 100%; }
+.boxlegend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 8px;
+  color: var(--ink-soft);
+  font-size: .75em;
+  font-variant-numeric: tabular-nums;
+}
+.boxlegend i { display: inline-block; width: 8px; height: 8px; margin-right: 4px; border-radius: 2px; vertical-align: 1px; }
+
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 40px 16px;
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.bottom-actions { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 22px; }
+.bottom-actions .btn { flex: 1 1 160px; }

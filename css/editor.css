@@ -1,0 +1,48 @@
+/* Éditeur de deck. */
+
+.form { display: grid; gap: 16px; padding-top: 4px; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .grid2 { grid-template-columns: 1fr; } }
+
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+.swatch {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--card);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--line);
+}
+.swatch[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--ink); }
+
+details.bulk { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+details.bulk summary { padding: 12px 14px; font-weight: 700; cursor: pointer; }
+details.bulk .inner { display: grid; gap: 10px; padding: 0 14px 14px; }
+
+.cards-list { display: grid; gap: 12px; }
+
+/* chaque carte est une petite fiche, avec la ligne rouge en haut */
+.edit-card {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-top: 3px solid var(--rule-red);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+.edit-card.invalid { outline: 2px solid var(--ko); }
+.edit-card-head { display: flex; align-items: center; justify-content: space-between; }
+.edit-card-head .n { color: var(--ink-soft); font-size: .85em; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* barre Annuler / Enregistrer, toujours visible en bas */
+.sticky-save {
+  position: sticky;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  gap: 10px;
+  padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: var(--desk);
+}
+.sticky-save .btn { flex: 1; }

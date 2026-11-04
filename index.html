@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Flashcardz</title>
+  <meta name="description" content="Révise avec des flashcards et la méthode des boîtes de Leitner. Marche hors ligne, sur téléphone et ordinateur.">
+
+  <!-- Appli installable (iPhone, Android, ordinateur) -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#e7ebf1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1320" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Flashcardz">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+
+  <!-- Polices : Bricolage Grotesque (titres), Atkinson Hyperlegible et Lexend (lecture) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Lexend:wght@400;700&display=swap">
+
+  <!-- Styles, du plus général au plus précis -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="stylesheet" href="css/review.css">
+  <link rel="stylesheet" href="css/settings.css">
+
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <!-- Chaque écran est dessiné ici par js/views/ -->
+  <main id="app"></main>
+  <noscript><p style="padding:16px">Flashcardz a besoin de JavaScript pour fonctionner.</p></noscript>
+</body>
+</html>

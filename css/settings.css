@@ -1,0 +1,25 @@
+/* Réglages. */
+
+.settings { display: grid; gap: 22px; }
+
+.group { padding: 4px 16px; border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+.group h3 {
+  padding: 14px 0 6px;
+  color: var(--ink-soft);
+  font-family: var(--f-body);
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.setting {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.group h3 + .setting { border-top: 0; }
+.setting > .grow { flex: 1 1 200px; }

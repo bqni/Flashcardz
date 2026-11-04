@@ -1,0 +1,11 @@
+{
+  "name": "flashcardz",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Flashcards et boîtes de Leitner, appli web installable.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start": "python3 -m http.server 8000"
+  }
+}

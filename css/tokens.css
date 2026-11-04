@@ -1,0 +1,106 @@
+/* Couleurs, polices et réglages globaux. Tout le reste du CSS utilise ces variables.
+   Thème : clair par défaut, sombre si le téléphone est en sombre (sauf choix "Clair"),
+   ou si on choisit "Sombre" dans les réglages. Concept visuel : la fiche bristol
+   (ligne rouge, lignes bleues) et les intercalaires d'une boîte à fiches. */
+
+:root {
+  /* surfaces */
+  --desk: #e7ebf1;          /* fond de page, le bureau */
+  --surface: #f7f8fb;       /* boutons, panneaux */
+  --card: #ffffff;          /* fiches et cartes */
+  --line: #d3d9e4;
+
+  /* texte */
+  --ink: #1a2440;
+  --ink-soft: #586380;
+
+  /* fiche bristol */
+  --rule-blue: #cfdaf0;
+  --rule-red: #d2453b;
+
+  /* accent et états */
+  --accent: #2445ad;
+  --accent-ink: #ffffff;
+  --accent-soft: #e3e9fa;
+  --ok: #1d8656;
+  --ok-soft: #dff2e8;
+  --ko: #c03f2b;
+  --ko-soft: #f8e3df;
+  --on-state: #ffffff;      /* texte sur les boutons vert / rouge */
+
+  /* boîtes de Leitner : de "pas encore su" (chaud) à "maîtrisé" (encre) */
+  --box0: #c5cbd8;
+  --box1: #e3a33a;
+  --box2: #d9c23b;
+  --box3: #8fbf4a;
+  --box4: #3f9f73;
+  --box5: #2445ad;
+
+  --shadow: 0 1px 2px rgba(26, 36, 64, .08), 0 8px 24px rgba(26, 36, 64, .08);
+
+  /* typographie */
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --fs: 1;        /* taille du texte, réglable */
+  --lh: 1.45;     /* interligne */
+  --ls: 0;        /* espacement des lettres */
+
+  --radius: 10px;
+  --dur: 1;       /* 0 = pas d'animation */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --desk: #0e1320;
+    --surface: #161d2e;
+    --card: #1c2538;
+    --line: #2b3652;
+    --ink: #e8ecf5;
+    --ink-soft: #9ba6bf;
+    --rule-blue: #27354f;
+    --rule-red: #e0685c;
+    --accent: #8aa4ff;
+    --accent-ink: #0e1320;
+    --accent-soft: #232f4d;
+    --ok: #4cc38a;
+    --ok-soft: #173326;
+    --ko: #f07d69;
+    --ko-soft: #3a1f1b;
+    --on-state: #0e1320;
+    --box0: #3a4562;
+    --box5: #8aa4ff;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --desk: #0e1320;
+  --surface: #161d2e;
+  --card: #1c2538;
+  --line: #2b3652;
+  --ink: #e8ecf5;
+  --ink-soft: #9ba6bf;
+  --rule-blue: #27354f;
+  --rule-red: #e0685c;
+  --accent: #8aa4ff;
+  --accent-ink: #0e1320;
+  --accent-soft: #232f4d;
+  --ok: #4cc38a;
+  --ok-soft: #173326;
+  --ko: #f07d69;
+  --ko-soft: #3a1f1b;
+  --on-state: #0e1320;
+  --box0: #3a4562;
+  --box5: #8aa4ff;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px rgba(0, 0, 0, .35);
+  color-scheme: dark;
+}
+
+/* Réglages d'accessibilité (classes posées par js/ui/appearance.js) */
+:root.font-lexend { --f-body: "Lexend", "Segoe UI", system-ui, sans-serif; }
+:root.font-system { --f-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+:root.airy { --lh: 1.75; --ls: .03em; }
+:root.no-anim { --dur: 0; }
+@media (prefers-reduced-motion: reduce) { :root { --dur: 0; } }
